@@ -1,53 +1,107 @@
 import { Suspense } from "react";
+import { CapturaRapida } from "@/components/CapturaRapida";
+import { CATEGORIAS_INICIALES } from "@/lib/categorias-iniciales";
+import { fechaCorta, formatoMXN } from "@/lib/formato";
 import { createClient } from "@/lib/supabase/server";
+import type { Categoria, MovimientoConCategoria } from "@/lib/tipos";
 import { cerrarSesion } from "./login/actions";
 
-// Next 16 separa cada página en dos partes: un "cascarón" estático que se
-// muestra al instante y el contenido que depende de quién eres (tu sesión),
-// que llega enseguida dentro de <Suspense>.
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-4 p-6 text-center">
-      <h1 className="text-3xl font-semibold">Finanzas personales</h1>
-      <Suspense fallback={<p className="text-neutral-500">Cargando…</p>}>
-        <EstadoDeConexion />
+    <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 px-4 pt-4 pb-10">
+      <header className="flex items-center justify-between">
+        <h1 className="text-lg font-semibold">Nuevo movimiento</h1>
+        <form action={cerrarSesion}>
+          <button type="submit" className="text-sm text-neutral-500 underline-offset-4 hover:underline">
+            Salir
+          </button>
+        </form>
+      </header>
+
+      {/* Lo que depende de tu sesión llega dentro de <Suspense> (ver fase 1). */}
+      <Suspense fallback={<p className="py-20 text-center text-neutral-500">Cargando…</p>}>
+        <Contenido />
       </Suspense>
     </main>
   );
 }
 
-async function EstadoDeConexion() {
+async function Contenido() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const categorias = await obtenerCategorias(supabase);
 
-  // Comprobación de la fase 1: ¿existen las tablas y puedo leerlas con mi sesión?
-  const { count, error } = await supabase
+  const { data: recientes } = await supabase
     .from("movimientos")
-    .select("*", { count: "exact", head: true });
+    .select("id, monto, tipo, categoria_id, fecha, descripcion, metodo_pago, origen, categorias(nombre, icono)")
+    .order("fecha", { ascending: false })
+    .order("created_at", { ascending: false })
+    .limit(5)
+    .overrideTypes<MovimientoConCategoria[]>();
 
   return (
     <>
-      <p className="text-neutral-500">Sesión iniciada como {user?.email}</p>
-      {error ? (
-        <p role="alert" className="max-w-sm text-sm text-red-600">
-          No pude leer la tabla de movimientos. ¿Ya corriste el SQL de
-          supabase/migrations en el SQL Editor?
-        </p>
-      ) : (
-        <p className="text-sm text-emerald-600">
-          Base de datos conectada: {count ?? 0} movimientos.
-        </p>
-      )}
-      <form action={cerrarSesion}>
-        <button
-          type="submit"
-          className="rounded-xl border border-neutral-300 px-4 py-2 text-sm dark:border-neutral-700"
-        >
-          Cerrar sesión
-        </button>
-      </form>
+      <CapturaRapida categorias={categorias} />
+
+      <section className="flex flex-col gap-2">
+        <h2 className="text-sm font-semibold text-neutral-500">Últimos movimientos</h2>
+        {!recientes?.length ? (
+          <p className="text-sm text-neutral-500">Aún no hay movimientos. Registra el primero arriba.</p>
+        ) : (
+          <ul className="divide-y divide-neutral-200 dark:divide-neutral-800">
+            {recientes.map((m) => (
+              <li key={m.id} className="flex items-center gap-3 py-2.5">
+                <span className="text-xl" aria-hidden>
+                  {m.categorias?.icono ?? "❔"}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-medium">
+                    {m.descripcion || m.categorias?.nombre || "Sin categoría"}
+                  </p>
+                  <p className="text-xs text-neutral-500">
+                    {fechaCorta(m.fecha)}
+                    {m.descripcion && m.categorias ? ` · ${m.categorias.nombre}` : ""}
+                  </p>
+                </div>
+                <span
+                  className={`text-sm font-semibold tabular-nums ${
+                    m.tipo === "ingreso" ? "text-emerald-600" : ""
+                  }`}
+                >
+                  {m.tipo === "ingreso" ? "+" : "−"}
+                  {formatoMXN(Number(m.monto))}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
     </>
   );
+}
+
+type Supabase = Awaited<ReturnType<typeof createClient>>;
+
+/** Lee las categorías activas; si la cuenta es nueva, crea las iniciales. */
+async function obtenerCategorias(supabase: Supabase): Promise<Categoria[]> {
+  const leer = () =>
+    supabase
+      .from("categorias")
+      .select("id, nombre, tipo, icono, orden, archivada")
+      .eq("archivada", false)
+      .order("orden")
+      .overrideTypes<Categoria[]>();
+
+  const { count } = await supabase
+    .from("categorias")
+    .select("id", { count: "exact", head: true });
+
+  if (count === 0) {
+    // ignoreDuplicates: si dos pestañas llegan a la vez, no se duplican.
+    await supabase.from("categorias").upsert(
+      CATEGORIAS_INICIALES.map((c, i) => ({ ...c, orden: i })),
+      { onConflict: "user_id,tipo,nombre", ignoreDuplicates: true },
+    );
+  }
+
+  return (await leer()).data ?? [];
 }
