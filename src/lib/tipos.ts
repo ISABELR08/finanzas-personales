@@ -35,3 +35,7 @@ export const METODOS_PAGO: { valor: MetodoPago; etiqueta: string }[] = [
   { valor: "credito", etiqueta: "Crédito" },
   { valor: "transferencia", etiqueta: "Transferencia" },
 ];
+
+/** Columnas que se piden a Supabase para obtener un MovimientoConCategoria. */
+export const COLUMNAS_MOVIMIENTO =
+  "id, monto, tipo, categoria_id, fecha, descripcion, metodo_pago, origen, categorias(nombre, icono)";
