@@ -8,7 +8,7 @@ create table if not exists public.categorias (
   user_id     uuid not null default auth.uid() references auth.users (id) on delete cascade,
   nombre      text not null check (char_length(nombre) between 1 and 40),
   tipo        text not null check (tipo in ('gasto', 'ingreso')),
-  icono       text not null default '🏷️',
+  icono       text not null default 'tag',
   orden       integer not null default 0,
   -- Archivar en vez de borrar: los movimientos viejos conservan su categoría.
   archivada   boolean not null default false,

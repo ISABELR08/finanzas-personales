@@ -2,6 +2,7 @@
 
 import { useRef, useState, useTransition } from "react";
 import { crearMovimiento } from "@/app/actions";
+import { IconoCategoria } from "@/components/IconoCategoria";
 import { formatoMXN, hoyLocal, leerMonto } from "@/lib/formato";
 import {
   METODOS_PAGO,
@@ -119,15 +120,13 @@ export function CapturaRapida({ categorias }: { categorias: Categoria[] }) {
             type="button"
             onClick={() => setCategoriaId(c.id)}
             aria-pressed={categoriaId === c.id}
-            className={`flex min-h-20 flex-col items-center justify-center gap-1 rounded-2xl border px-1 py-2 text-xs font-medium transition-colors ${
+            className={`flex min-h-20 flex-col items-center justify-center gap-1.5 rounded-2xl border px-1 py-2 text-xs font-medium transition-colors ${
               categoriaId === c.id
                 ? `${colorTipo} border-transparent text-white`
                 : "border-neutral-200 dark:border-neutral-800"
             }`}
           >
-            <span className="text-2xl" aria-hidden>
-              {c.icono}
-            </span>
+            <IconoCategoria categoria={c} />
             <span className="text-center leading-tight">{c.nombre}</span>
           </button>
         ))}
@@ -197,7 +196,7 @@ export function CapturaRapida({ categorias }: { categorias: Categoria[] }) {
           aviso?.clase === "error" ? "text-red-600" : "text-emerald-600"
         }`}
       >
-        {aviso && (aviso.clase === "ok" ? `✓ ${aviso.texto}` : aviso.texto)}
+        {aviso?.texto}
       </p>
     </form>
   );

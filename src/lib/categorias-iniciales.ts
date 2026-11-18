@@ -1,22 +1,25 @@
 import type { TipoMovimiento } from "./tipos";
 
-/** Categorías con las que arranca una cuenta nueva. Luego son editables. */
+/**
+ * Categorías con las que arranca una cuenta nueva. Luego son editables.
+ * "icono" es una clave de src/components/IconoCategoria.tsx.
+ */
 export const CATEGORIAS_INICIALES: {
   nombre: string;
   tipo: TipoMovimiento;
   icono: string;
 }[] = [
-  { nombre: "Comida", tipo: "gasto", icono: "🌮" },
-  { nombre: "Súper", tipo: "gasto", icono: "🛒" },
-  { nombre: "Transporte", tipo: "gasto", icono: "🚌" },
-  { nombre: "Renta y servicios", tipo: "gasto", icono: "🏠" },
-  { nombre: "Escuela", tipo: "gasto", icono: "📚" },
-  { nombre: "Salud", tipo: "gasto", icono: "💊" },
-  { nombre: "Entretenimiento", tipo: "gasto", icono: "🎬" },
-  { nombre: "Suscripciones", tipo: "gasto", icono: "📱" },
-  { nombre: "Ropa y personal", tipo: "gasto", icono: "👕" },
-  { nombre: "Otros", tipo: "gasto", icono: "📦" },
-  { nombre: "Beca / Mesada", tipo: "ingreso", icono: "🎓" },
-  { nombre: "Trabajo", tipo: "ingreso", icono: "💼" },
-  { nombre: "Otros ingresos", tipo: "ingreso", icono: "💰" },
+  { nombre: "Comida", tipo: "gasto", icono: "utensils" },
+  { nombre: "Súper", tipo: "gasto", icono: "shopping-cart" },
+  { nombre: "Transporte", tipo: "gasto", icono: "bus" },
+  { nombre: "Renta y servicios", tipo: "gasto", icono: "house" },
+  { nombre: "Escuela", tipo: "gasto", icono: "book-open" },
+  { nombre: "Salud", tipo: "gasto", icono: "heart-pulse" },
+  { nombre: "Entretenimiento", tipo: "gasto", icono: "clapperboard" },
+  { nombre: "Suscripciones", tipo: "gasto", icono: "smartphone" },
+  { nombre: "Ropa y personal", tipo: "gasto", icono: "shirt" },
+  { nombre: "Otros", tipo: "gasto", icono: "package" },
+  { nombre: "Beca / Mesada", tipo: "ingreso", icono: "graduation-cap" },
+  { nombre: "Trabajo", tipo: "ingreso", icono: "briefcase" },
+  { nombre: "Otros ingresos", tipo: "ingreso", icono: "wallet" },
 ];

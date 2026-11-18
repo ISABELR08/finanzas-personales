@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { CapturaRapida } from "@/components/CapturaRapida";
+import { IconoCategoria } from "@/components/IconoCategoria";
 import { CATEGORIAS_INICIALES } from "@/lib/categorias-iniciales";
 import { fechaCorta, formatoMXN } from "@/lib/formato";
 import { createClient } from "@/lib/supabase/server";
@@ -50,9 +51,7 @@ async function Contenido() {
           <ul className="divide-y divide-neutral-200 dark:divide-neutral-800">
             {recientes.map((m) => (
               <li key={m.id} className="flex items-center gap-3 py-2.5">
-                <span className="text-xl" aria-hidden>
-                  {m.categorias?.icono ?? "❔"}
-                </span>
+                <IconoCategoria categoria={m.categorias} className="size-5 text-neutral-500" />
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-medium">
                     {m.descripcion || m.categorias?.nombre || "Sin categoría"}
