@@ -1,10 +1,11 @@
-import { CalendarDays, CirclePlus, Tags } from "lucide-react";
+import { CalendarDays, CirclePlus, FileUp, Tags } from "lucide-react";
 import Link from "next/link";
 
 const SECCIONES = [
   { clave: "registrar", href: "/", etiqueta: "Registrar", Icono: CirclePlus },
   { clave: "mes", href: "/mes", etiqueta: "Mes", Icono: CalendarDays },
   { clave: "categorias", href: "/categorias", etiqueta: "Categorías", Icono: Tags },
+  { clave: "importar", href: "/importar", etiqueta: "Importar", Icono: FileUp },
 ] as const;
 
 /** Barra fija inferior, al alcance del pulgar en el celular. */
