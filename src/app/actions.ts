@@ -2,6 +2,7 @@
 
 import { refresh } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
+import { ICONOS } from "@/components/IconoCategoria";
 import type { MetodoPago, TipoMovimiento } from "@/lib/tipos";
 
 export type DatosMovimiento = {
@@ -105,6 +106,87 @@ export async function borrarMovimiento(id: string): Promise<Resultado> {
   if (error || !data?.length) {
     return { ok: false, error: "No se pudo borrar." };
   }
+
+  refresh();
+  return { ok: true };
+}
+
+// ── Categorías ───────────────────────────────────────────────────
+
+export type DatosCategoria = { nombre: string; icono: string };
+
+function validarCategoria(datos: DatosCategoria) {
+  const nombre = String(datos.nombre ?? "").trim().replace(/\s+/g, " ");
+  if (nombre.length < 1 || nombre.length > 40) {
+    return { error: "El nombre debe tener entre 1 y 40 caracteres." };
+  }
+  if (!(datos.icono in ICONOS)) {
+    return { error: "Icono inválido." };
+  }
+  return { columnas: { nombre, icono: datos.icono } };
+}
+
+/** 23505 es el código de Postgres para "violación de restricción única". */
+const mensajeDeError = (codigo?: string) =>
+  codigo === "23505"
+    ? "Ya tienes una categoría con ese nombre."
+    : "No se pudo guardar la categoría.";
+
+export async function crearCategoria(
+  tipo: TipoMovimiento,
+  datos: DatosCategoria,
+): Promise<Resultado> {
+  const v = validarCategoria(datos);
+  if ("error" in v) return { ok: false, error: v.error! };
+  if (!TIPOS.includes(tipo)) return { ok: false, error: "Tipo inválido." };
+
+  const supabase = await createClient();
+  // La nueva categoría va al final: orden = el mayor que exista + 1.
+  const { data: ultima } = await supabase
+    .from("categorias")
+    .select("orden")
+    .order("orden", { ascending: false })
+    .limit(1);
+  const orden = (ultima?.[0]?.orden ?? -1) + 1;
+
+  const { error } = await supabase.from("categorias").insert({ ...v.columnas, tipo, orden });
+  if (error) return { ok: false, error: mensajeDeError(error.code) };
+
+  refresh();
+  return { ok: true };
+}
+
+export async function actualizarCategoria(
+  id: string,
+  datos: DatosCategoria,
+): Promise<Resultado> {
+  const v = validarCategoria(datos);
+  if ("error" in v) return { ok: false, error: v.error! };
+
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("categorias")
+    .update(v.columnas)
+    .eq("id", id)
+    .select("id");
+  if (error || !data?.length) return { ok: false, error: mensajeDeError(error?.code) };
+
+  refresh();
+  return { ok: true };
+}
+
+/**
+ * Archivar oculta la categoría al registrar, pero no la borra: los
+ * movimientos que ya la usan la conservan y el historial no se rompe.
+ */
+export async function archivarCategoria(id: string, archivada: boolean): Promise<Resultado> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("categorias")
+    .update({ archivada })
+    .eq("id", id)
+    .select("id");
+  if (error || !data?.length) return { ok: false, error: "No se pudo actualizar la categoría." };
 
   refresh();
   return { ok: true };
