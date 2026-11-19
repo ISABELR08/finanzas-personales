@@ -18,7 +18,7 @@ type Props = { searchParams: Promise<{ m?: string | string[] }> };
 export default function PaginaMes({ searchParams }: Props) {
   return (
     <>
-      <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 px-4 pt-4 pb-24">
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 px-4 pt-4 pb-[calc(6rem+var(--seguro-abajo))]">
         <Suspense fallback={<p className="py-20 text-center text-neutral-500">Cargando…</p>}>
           <Mes searchParams={searchParams} />
         </Suspense>

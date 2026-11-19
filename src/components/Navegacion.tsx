@@ -8,12 +8,16 @@ const SECCIONES = [
   { clave: "importar", href: "/importar", etiqueta: "Importar", Icono: FileUp },
 ] as const;
 
-/** Barra fija inferior, al alcance del pulgar en el celular. */
+/**
+ * Barra fija inferior, al alcance del pulgar en el celular. Su relleno
+ * inferior la mantiene por encima de la franja del gesto de inicio del iPhone,
+ * para que tocar un botón no dispare ese gesto.
+ */
 export function Navegacion({ activa }: { activa: (typeof SECCIONES)[number]["clave"] }) {
   return (
     <nav
       aria-label="Secciones"
-      className="fixed inset-x-0 bottom-0 z-10 border-t border-neutral-200 bg-background pb-[env(safe-area-inset-bottom)] dark:border-neutral-800"
+      className="fixed inset-x-0 bottom-0 z-10 border-t border-neutral-200 bg-background pb-[calc(var(--seguro-abajo)+0.25rem)] dark:border-neutral-800"
     >
       <ul className="mx-auto flex max-w-md">
         {SECCIONES.map(({ clave, href, etiqueta, Icono }) => (
@@ -21,7 +25,7 @@ export function Navegacion({ activa }: { activa: (typeof SECCIONES)[number]["cla
             <Link
               href={href}
               aria-current={activa === clave ? "page" : undefined}
-              className={`flex flex-col items-center gap-0.5 py-2 text-xs font-medium ${
+              className={`flex flex-col items-center gap-0.5 pt-2.5 pb-1.5 text-xs font-medium ${
                 activa === clave ? "text-emerald-600" : "text-neutral-500"
               }`}
             >

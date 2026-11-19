@@ -9,7 +9,7 @@ import type { Categoria } from "@/lib/tipos";
 export default function PaginaImportar() {
   return (
     <>
-      <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 px-4 pt-4 pb-24">
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 px-4 pt-4 pb-[calc(6rem+var(--seguro-abajo))]">
         <header>
           <h1 className="text-lg font-semibold">Importar estado de cuenta</h1>
           <p className="text-sm text-neutral-500">

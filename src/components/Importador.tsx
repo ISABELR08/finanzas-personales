@@ -303,7 +303,7 @@ export function Importador({
       )}
 
       {/* Barra de acción fija sobre la navegación inferior */}
-      <div className="sticky bottom-16 flex gap-3 bg-background py-3">
+      <div className="sticky bottom-[calc(4.25rem+var(--seguro-abajo))] flex gap-3 bg-background py-3">
         <button
           type="button"
           onClick={() => setEstado({ paso: "elegir" })}

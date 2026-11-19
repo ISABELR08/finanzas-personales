@@ -1,0 +1,631 @@
+fecha,tipo,monto,categoria,descripcion,metodo_pago,origen
+2026-01-01,ingreso,5500.00,Beca / Mesada,Beca mensual,transferencia,banco
+2026-01-01,gasto,45.00,Comida,Café,efectivo,manual
+2026-01-02,gasto,170.50,Comida,Pizza,efectivo,manual
+2026-01-02,gasto,86.00,Transporte,UBER TRIP,debito,banco
+2026-01-03,gasto,49.00,Comida,Torta,efectivo,manual
+2026-01-04,gasto,399.40,Súper,SORIANA,debito,banco
+2026-01-04,gasto,280.00,Entretenimiento,Boliche,debito,banco
+2026-01-05,gasto,2800.00,Renta y servicios,Renta del cuarto,transferencia,banco
+2026-01-06,gasto,129.00,Suscripciones,SPOTIFY MEXICO,debito,banco
+2026-01-06,gasto,88.50,Comida,Comida corrida,debito,banco
+2026-01-06,gasto,54.00,Comida,Torta,debito,banco
+2026-01-07,gasto,70.50,Comida,Tacos,debito,banco
+2026-01-08,gasto,68.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-01-09,gasto,205.00,Entretenimiento,Boliche,debito,banco
+2026-01-10,gasto,78.50,Comida,Cafetería de la escuela,efectivo,manual
+2026-01-10,gasto,70.00,Comida,Torta,efectivo,manual
+2026-01-10,gasto,117.00,Transporte,UBER TRIP,debito,banco
+2026-01-11,gasto,70.00,Comida,Torta,efectivo,manual
+2026-01-11,gasto,299.00,Salud,Consulta médica,debito,banco
+2026-01-12,gasto,219.00,Suscripciones,NETFLIX,debito,banco
+2026-01-12,gasto,108.50,Comida,Comida corrida,efectivo,manual
+2026-01-13,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-01-14,gasto,79.00,Comida,Cafetería de la escuela,debito,banco
+2026-01-14,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-01-15,ingreso,3500.00,Beca / Mesada,Mesada,transferencia,banco
+2026-01-15,gasto,58.50,Comida,Cafetería de la escuela,debito,banco
+2026-01-15,gasto,69.50,Comida,Torta,debito,banco
+2026-01-15,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-01-16,gasto,250.50,Comida,Sushi,debito,banco
+2026-01-16,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-01-17,ingreso,300.00,Trabajo,Clases particulares,efectivo,manual
+2026-01-17,gasto,98.00,Comida,Tacos,efectivo,manual
+2026-01-17,gasto,160.00,Transporte,UBER TRIP,debito,banco
+2026-01-18,gasto,64.50,Comida,Cafetería de la escuela,debito,banco
+2026-01-18,gasto,39.50,Comida,Antojitos,efectivo,manual
+2026-01-18,gasto,381.40,Súper,CHEDRAUI,debito,banco
+2026-01-18,gasto,155.00,Entretenimiento,,debito,banco
+2026-01-19,gasto,84.50,Comida,Comida corrida,efectivo,manual
+2026-01-19,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-01-19,gasto,1850.00,Escuela,Inscripción semestre,transferencia,banco
+2026-01-20,gasto,200.00,Renta y servicios,Recarga TELCEL,debito,banco
+2026-01-20,gasto,115.50,Comida,Tacos,debito,banco
+2026-01-20,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-01-21,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-01-22,gasto,74.50,Comida,Cafetería de la escuela,debito,banco
+2026-01-22,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-01-23,gasto,76.00,Comida,Cafetería de la escuela,debito,banco
+2026-01-23,gasto,127.00,Comida,Pizza,debito,banco
+2026-01-23,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-01-23,gasto,36.00,Escuela,Material de laboratorio,efectivo,manual
+2026-01-24,gasto,141.50,Comida,Hamburguesa,efectivo,manual
+2026-01-25,gasto,90.50,Comida,Tacos,efectivo,manual
+2026-01-25,gasto,101.50,Transporte,UBER TRIP,debito,banco
+2026-01-25,gasto,323.50,Súper,SORIANA,debito,banco
+2026-01-25,gasto,255.00,Entretenimiento,Boliche,debito,banco
+2026-01-25,gasto,135.50,Escuela,Papelería,efectivo,manual
+2026-01-27,gasto,82.00,Comida,Comida corrida,debito,banco
+2026-01-27,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-01-28,gasto,51.50,Comida,Café,efectivo,manual
+2026-01-28,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-01-29,gasto,75.00,Escuela,Material de laboratorio,efectivo,manual
+2026-01-30,gasto,141.00,Comida,Pizza,debito,banco
+2026-01-30,gasto,176.00,Comida,Pizza,efectivo,manual
+2026-01-31,gasto,143.00,Comida,Hamburguesa,debito,banco
+2026-02-01,ingreso,5500.00,Beca / Mesada,Beca mensual,transferencia,banco
+2026-02-01,gasto,215.00,Comida,Sushi,debito,banco
+2026-02-01,gasto,239.00,Comida,Sushi,efectivo,manual
+2026-02-01,gasto,278.00,Súper,SORIANA,debito,banco
+2026-02-02,gasto,73.50,Comida,Café,efectivo,manual
+2026-02-02,gasto,61.00,Comida,Café,efectivo,manual
+2026-02-02,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-02-03,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-02-03,gasto,358.50,Salud,Farmacia,debito,banco
+2026-02-03,gasto,114.50,Escuela,Papelería,efectivo,manual
+2026-02-04,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-02-05,gasto,2800.00,Renta y servicios,Renta del cuarto,transferencia,banco
+2026-02-05,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-02-06,gasto,129.00,Suscripciones,SPOTIFY MEXICO,debito,banco
+2026-02-06,gasto,173.00,Comida,Hamburguesa,efectivo,manual
+2026-02-06,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-02-07,gasto,87.50,Comida,Cafetería de la escuela,efectivo,manual
+2026-02-07,gasto,47.00,Comida,Café,efectivo,manual
+2026-02-07,gasto,90.50,Transporte,UBER TRIP,debito,banco
+2026-02-08,gasto,48.50,Comida,Torta,efectivo,manual
+2026-02-08,gasto,73.00,Comida,Tacos,debito,banco
+2026-02-08,gasto,380.80,Súper,CHEDRAUI,debito,banco
+2026-02-09,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-02-11,gasto,64.50,Comida,Cafetería de la escuela,efectivo,manual
+2026-02-11,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-02-12,gasto,219.00,Suscripciones,NETFLIX,debito,banco
+2026-02-12,gasto,62.50,Comida,Torta,debito,banco
+2026-02-12,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-02-12,gasto,137.50,Escuela,Papelería,efectivo,manual
+2026-02-13,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-02-13,gasto,215.00,Entretenimiento,Boliche,debito,banco
+2026-02-14,gasto,56.00,Comida,Torta,efectivo,manual
+2026-02-14,gasto,100.50,Transporte,UBER TRIP,debito,banco
+2026-02-14,gasto,780.00,Entretenimiento,Cena de San Valentín,debito,banco
+2026-02-15,ingreso,3500.00,Beca / Mesada,Mesada,transferencia,banco
+2026-02-15,gasto,65.00,Comida,Antojitos,debito,banco
+2026-02-15,gasto,110.00,Transporte,UBER TRIP,debito,banco
+2026-02-15,gasto,307.20,Súper,SORIANA,debito,banco
+2026-02-16,gasto,47.00,Comida,Torta,efectivo,manual
+2026-02-16,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-02-17,gasto,117.00,Comida,Tacos,debito,banco
+2026-02-17,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-02-18,gasto,64.00,Comida,Torta,debito,banco
+2026-02-18,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-02-19,gasto,67.50,Comida,Cafetería de la escuela,efectivo,manual
+2026-02-19,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-02-20,gasto,200.00,Renta y servicios,Recarga TELCEL,debito,banco
+2026-02-20,gasto,158.00,Comida,Hamburguesa,debito,banco
+2026-02-20,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-02-21,ingreso,550.00,Trabajo,Clases particulares,efectivo,manual
+2026-02-21,gasto,56.00,Comida,Torta,debito,banco
+2026-02-22,gasto,248.00,Renta y servicios,CFE luz (bimestral),debito,banco
+2026-02-22,gasto,170.50,Comida,Sushi,debito,banco
+2026-02-22,gasto,380.80,Súper,CHEDRAUI,debito,banco
+2026-02-23,gasto,71.00,Comida,Café,efectivo,manual
+2026-02-23,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-02-24,gasto,82.50,Comida,Cafetería de la escuela,debito,banco
+2026-02-24,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-02-24,gasto,412.00,Ropa y personal,Corte de cabello,debito,banco
+2026-02-25,gasto,53.50,Comida,Torta,debito,banco
+2026-02-26,gasto,101.00,Comida,Comida corrida,efectivo,manual
+2026-02-27,gasto,59.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-02-27,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-02-27,gasto,32.50,Escuela,Papelería,efectivo,manual
+2026-02-28,gasto,167.00,Comida,Pizza,debito,banco
+2026-02-28,gasto,180.00,Entretenimiento,Cine,debito,banco
+2026-02-28,gasto,91.50,Escuela,Material de laboratorio,efectivo,manual
+2026-03-01,ingreso,5500.00,Beca / Mesada,Beca mensual,transferencia,banco
+2026-03-01,gasto,130.00,Comida,Hamburguesa,efectivo,manual
+2026-03-01,gasto,65.00,Comida,Torta,debito,banco
+2026-03-01,gasto,120.00,Transporte,UBER TRIP,debito,banco
+2026-03-01,gasto,375.10,Súper,CHEDRAUI,debito,banco
+2026-03-02,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-03-03,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-03-04,gasto,115.50,Comida,Tacos,debito,banco
+2026-03-04,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-03-05,gasto,2800.00,Renta y servicios,Renta del cuarto,transferencia,banco
+2026-03-05,gasto,42.50,Comida,Café,debito,banco
+2026-03-05,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-03-06,gasto,129.00,Suscripciones,SPOTIFY MEXICO,debito,banco
+2026-03-06,gasto,57.50,Comida,Antojitos,debito,banco
+2026-03-06,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-03-06,gasto,56.00,Escuela,Material de laboratorio,efectivo,manual
+2026-03-07,gasto,66.50,Comida,Café,debito,banco
+2026-03-07,gasto,119.50,Transporte,UBER TRIP,debito,banco
+2026-03-08,gasto,343.50,Súper,WALMART,debito,banco
+2026-03-09,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-03-10,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-03-11,gasto,64.00,Comida,Torta,debito,banco
+2026-03-11,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-03-12,gasto,219.00,Suscripciones,NETFLIX,debito,banco
+2026-03-12,gasto,83.50,Comida,Cafetería de la escuela,debito,banco
+2026-03-12,gasto,59.50,Comida,Café,debito,banco
+2026-03-12,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-03-13,gasto,57.00,Comida,Café,efectivo,manual
+2026-03-13,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-03-14,gasto,132.50,Comida,Hamburguesa,debito,banco
+2026-03-15,ingreso,3500.00,Beca / Mesada,Mesada,transferencia,banco
+2026-03-15,gasto,92.50,Comida,Cafetería de la escuela,efectivo,manual
+2026-03-15,gasto,83.00,Comida,Comida corrida,debito,banco
+2026-03-15,gasto,453.60,Súper,CHEDRAUI,debito,banco
+2026-03-17,gasto,87.50,Comida,Tacos,efectivo,manual
+2026-03-17,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-03-18,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-03-19,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-03-19,gasto,110.00,Escuela,Papelería,efectivo,manual
+2026-03-20,gasto,200.00,Renta y servicios,Recarga TELCEL,debito,banco
+2026-03-20,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-03-21,ingreso,400.00,Trabajo,Clases particulares,efectivo,manual
+2026-03-21,gasto,228.00,Comida,Sushi,efectivo,manual
+2026-03-21,gasto,215.00,Entretenimiento,Cine,debito,banco
+2026-03-21,gasto,2400.00,Salud,Dentista (urgencia),debito,banco
+2026-03-22,gasto,45.00,Comida,Torta,efectivo,manual
+2026-03-22,gasto,45.50,Comida,Café,debito,banco
+2026-03-22,gasto,412.80,Súper,CHEDRAUI,debito,banco
+2026-03-23,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-03-24,gasto,59.00,Comida,Torta,efectivo,manual
+2026-03-24,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-03-25,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-03-26,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-03-27,gasto,85.50,Comida,Comida corrida,efectivo,manual
+2026-03-27,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-03-27,gasto,147.50,Transporte,UBER TRIP,debito,banco
+2026-03-28,ingreso,550.00,Trabajo,Clases particulares,efectivo,manual
+2026-03-29,gasto,65.00,Comida,Torta,debito,banco
+2026-03-29,gasto,59.00,Comida,Antojitos,efectivo,manual
+2026-03-29,gasto,434.80,Súper,CHEDRAUI,debito,banco
+2026-03-30,gasto,79.50,Comida,Cafetería de la escuela,efectivo,manual
+2026-03-30,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-03-31,gasto,44.00,Comida,Café,debito,banco
+2026-03-31,gasto,30.00,Transporte,,efectivo,manual
+2026-04-01,ingreso,5500.00,Beca / Mesada,Beca mensual,transferencia,banco
+2026-04-01,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-04-02,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-04-03,gasto,132.00,Comida,Hamburguesa,efectivo,manual
+2026-04-04,gasto,88.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-04-04,gasto,88.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-04-04,gasto,90.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-04-04,gasto,180.00,Entretenimiento,Cine,debito,banco
+2026-04-05,gasto,2800.00,Renta y servicios,Renta del cuarto,transferencia,banco
+2026-04-05,gasto,102.50,Comida,Comida corrida,efectivo,manual
+2026-04-05,gasto,131.00,Comida,Hamburguesa,efectivo,manual
+2026-04-05,gasto,109.00,Transporte,UBER TRIP,debito,banco
+2026-04-05,gasto,276.50,Súper,SORIANA,debito,banco
+2026-04-06,gasto,129.00,Suscripciones,SPOTIFY MEXICO,debito,banco
+2026-04-06,gasto,80.50,Comida,Cafetería de la escuela,efectivo,manual
+2026-04-06,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-04-08,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-04-09,gasto,99.00,Comida,Tacos,debito,banco
+2026-04-09,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-04-10,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-04-11,ingreso,550.00,Trabajo,Clases particulares,efectivo,manual
+2026-04-11,gasto,95.50,Comida,Comida corrida,debito,banco
+2026-04-11,gasto,54.50,COMIDA ,Café,debito,banco
+2026-04-11,gasto,64.00,Escuela,Papelería,efectivo,manual
+2026-04-12,gasto,219.00,Suscripciones,NETFLIX,debito,banco
+2026-04-12,gasto,40.00,Comida,Antojitos,efectivo,manual
+2026-04-12,gasto,458.30,Súper,CHEDRAUI,debito,banco
+2026-04-13,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-04-14,gasto,52.50,Comida,Café,debito,banco
+2026-04-14,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-04-15,ingreso,3500.00,Beca / Mesada,Mesada,transferencia,banco
+2026-04-15,gasto,72.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-04-15,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-04-16,gasto,30.00,Transporte,,efectivo,manual
+2026-04-17,gasto,173.50,Comida,Sushi,debito,banco
+2026-04-17,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-04-18,gasto,85.00,comida,Comida corrida,debito,banco
+2026-04-18,gasto,43.00,Comida,Antojitos,debito,banco
+2026-04-19,gasto,128.00,Comida,Pizza,efectivo,manual
+2026-04-19,gasto,365.10,Súper,CHEDRAUI,debito,banco
+2026-04-19,gasto,429.00,Ropa y personal,Tenis,debito,banco
+2026-04-20,gasto,200.00,Renta y servicios,Recarga TELCEL,debito,banco
+2026-04-20,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-04-21,gasto,67.50,Comida,Café,efectivo,manual
+2026-04-21,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-04-22,gasto,229.00,Renta y servicios,CFE luz (bimestral),debito,banco
+2026-04-22,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-04-23,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-04-24,gasto,94.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-04-24,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-04-24,gasto,111.50,Transporte,UBER TRIP,debito,banco
+2026-04-25,ingreso,450.00,Trabajo,Clases particulares,efectivo,manual
+2026-04-25,gasto,170.50,Comida,Pizza,debito,banco
+2026-04-26,gasto,299.20,Súper,WALMART,debito,banco
+2026-04-27,gasto,86.50,Comida,Tacos,efectivo,manual
+2026-04-27,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-04-28,gasto,80.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-04-28,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-04-30,gasto,62.50,Comida,Torta,efectivo,manual
+2026-04-30,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-05-01,ingreso,5500.00,Beca / Mesada,Beca mensual,transferencia,banco
+2026-05-01,gasto,82.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-05-01,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-05-01,gasto,325.00,Entretenimiento,Bar con amigos,debito,banco
+2026-05-02,ingreso,400.00,Trabajo,Clases particulares,efectivo,manual
+2026-05-02,gasto,68.50,Comida,Cafetería de la escuela,efectivo,manual
+2026-05-02,gasto,70.00,Entretenimiento,Museo,debito,banco
+2026-05-03,gasto,103.50,Transporte,UBER TRIP,debito,banco
+2026-05-03,gasto,512.10,Súper,CHEDRAUI,debito,banco
+2026-05-04,gasto,50.00,Comida,Torta,debito,banco
+2026-05-04,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-05-05,gasto,2800.00,Renta y servicios,,transferencia,banco
+2026-05-05,gasto,103.00,Comida,Comida corrida,debito,banco
+2026-05-05,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-05-06,gasto,129.00,Suscripciones,SPOTIFY MEXICO,debito,banco
+2026-05-06,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-05-07,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-05-08,gasto,52.00,Comida,Antojitos,debito,banco
+2026-05-08,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-05-09,gasto,67.50,Comida,Torta,debito,banco
+2026-05-09,gasto,226.00,Comida,Sushi,debito,banco
+2026-05-09,gasto,1950.00,Entretenimiento,Boletos de concierto,debito,banco
+2026-05-10,gasto,66.00,Comida,Torta,efectivo,manual
+2026-05-10,gasto,424.30,Súper,CHEDRAUI,debito,banco
+2026-05-11,gasto,81.50,Comida,Tacos,efectivo,manual
+2026-05-12,gasto,219.00,Suscripciones,NETFLIX,debito,banco
+2026-05-12,gasto,119.00,Comida,Tacos,debito,banco
+2026-05-12,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-05-13,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-05-14,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-05-14,gasto,130.00,Escuela,Papelería,efectivo,manual
+2026-05-15,ingreso,3500.00,Beca / Mesada,Mesada,transferencia,banco
+2026-05-15,gasto,78.50,Comida,Tacos,efectivo,manual
+2026-05-15,gasto,69.00,Comida,Antojitos,efectivo,manual
+2026-05-15,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-05-15,gasto,215.00,Entretenimiento,Boliche,debito,banco
+2026-05-16,ingreso,600.00,Trabajo,Clases particulares,efectivo,manual
+2026-05-16,gasto,58.00,Comida,Café,debito,banco
+2026-05-16,gasto,60.00,Comida,Torta,efectivo,manual
+2026-05-17,gasto,37.00,Comida,Antojitos,efectivo,manual
+2026-05-17,gasto,519.50,Súper,SORIANA,debito,banco
+2026-05-18,gasto,80.00,Comida,Comida corrida,debito,banco
+2026-05-18,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-05-19,gasto,61.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-05-19,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-05-20,gasto,200.00,Renta y servicios,Recarga TELCEL,debito,banco
+2026-05-20,gasto,44.00,Comida,Café,efectivo,manual
+2026-05-20,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-05-21,gasto,30.00,Transporte,,efectivo,manual
+2026-05-22,gasto,71.50,Comida,Antojitos,debito,banco
+2026-05-23,ingreso,350.00,Trabajo,Clases particulares,efectivo,manual
+2026-05-23,gasto,119.50,Comida,Hamburguesa,efectivo,manual
+2026-05-23,gasto,79.50,Transporte,UBER TRIP,debito,banco
+2026-05-23,gasto,250.50,Salud,Consulta médica,debito,banco
+2026-05-24,gasto,67.50,Comida,Antojitos,debito,banco
+2026-05-24,gasto,474.10,Súper,WALMART,debito,banco
+2026-05-24,gasto,255.00,Entretenimiento,Boliche,debito,banco
+2026-05-25,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-05-26,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-05-27,gasto,49.00,Comida,Café,debito,banco
+2026-05-27,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-05-28,gasto,61.00,Comida,Cafetería de la escuela,debito,banco
+2026-05-28,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-05-28,gasto,141.50,Escuela,Copias e impresiones,efectivo,manual
+2026-05-29,gasto,89.50,Comida,Comida corrida,debito,banco
+2026-05-29,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-05-30,gasto,92.00,Comida,Comida corrida,efectivo,manual
+2026-05-30,gasto,128.50,Transporte,UBER TRIP,debito,banco
+2026-05-31,gasto,166.50,Comida,Pizza,efectivo,manual
+2026-05-31,gasto,285.20,Súper,SORIANA,debito,banco
+2026-06-01,ingreso,5500.00,Beca / Mesada,Beca mensual,transferencia,banco
+2026-06-03,gasto,57.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-06-03,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-06-03,gasto,309.00,Ropa y personal,Ropa,debito,banco
+2026-06-04,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-06-05,gasto,2800.00,Renta y servicios,Renta del cuarto,transferencia,banco
+2026-06-05,gasto,160.00,Comida,Hamburguesa,debito,banco
+2026-06-05,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-06-06,gasto,129.00,Suscripciones,SPOTIFY MEXICO,debito,banco
+2026-06-06,gasto,103.00,Comida,Tacos,efectivo,manual
+2026-06-07,gasto,150.50,Comida,Hamburguesa,debito,banco
+2026-06-07,gasto,406.40,Súper,SORIANA,debito,banco
+2026-06-08,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-06-09,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-06-10,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-06-11,gasto,82.00,Comida,Comida corrida,efectivo,manual
+2026-06-11,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-06-12,gasto,219.00,Suscripciones,NETFLIX,debito,banco
+2026-06-12,gasto,148.50,Comida,Hamburguesa,debito,banco
+2026-06-12,gasto,224.00,Comida,Sushi,efectivo,manual
+2026-06-12,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-06-12,gasto,305.00,Entretenimiento,Bar con amigos,debito,banco
+2026-06-13,gasto,77.00,Comida,Antojitos,efectivo,manual
+2026-06-13,gasto,3200.00,Otros,Reparación de laptop,transferencia,banco
+2026-06-14,gasto,335.50,Súper,SORIANA,debito,banco
+2026-06-15,ingreso,3500.00,Beca / Mesada,Mesada,transferencia,banco
+2026-06-15,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-06-16,gasto,30.00,Transporte,,efectivo,manual
+2026-06-17,gasto,94.50,Comida,Comida corrida,efectivo,manual
+2026-06-18,gasto,62.50,Comida,Café,efectivo,manual
+2026-06-19,gasto,104.50,Comida,Comida corrida,efectivo,manual
+2026-06-19,gasto,153.00,Transporte,UBER TRIP,debito,banco
+2026-06-20,ingreso,300.00,Trabajo,Clases particulares,efectivo,manual
+2026-06-20,gasto,200.00,Renta y servicios,Recarga TELCEL,debito,banco
+2026-06-20,gasto,74.50,Comida,Café,efectivo,manual
+2026-06-20,ingreso,3000.00,Otros ingresos,Regalo de cumpleaños,transferencia,banco
+2026-06-21,gasto,67.50,Comida,Antojitos,debito,banco
+2026-06-21,gasto,155.50,Comida,Hamburguesa,debito,banco
+2026-06-21,gasto,482.60,Súper,SORIANA,debito,banco
+2026-06-22,gasto,206.00,Renta y servicios,CFE luz (bimestral),debito,banco
+2026-06-22,gasto,88.50,Comida,Comida corrida,efectivo,manual
+2026-06-22,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-06-23,gasto,79.00,Comida,Comida corrida,efectivo,manual
+2026-06-23,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-06-24,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-06-25,gasto,83.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-06-26,gasto,91.50,Comida,Tacos,efectivo,manual
+2026-06-26,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-06-26,gasto,152.00,Transporte,UBER TRIP,debito,banco
+2026-06-27,gasto,58.00,Comida,Torta,efectivo,manual
+2026-06-27,gasto,87.50,Escuela,Papelería,efectivo,manual
+2026-06-28,gasto,76.50,Comida,Comida corrida,debito,banco
+2026-06-28,gasto,518.50,Súper,WALMART,debito,banco
+2026-06-29,gasto,67.50,Comida,Torta,efectivo,manual
+2026-06-29,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-06-30,gasto,74.50,Comida,Café,efectivo,manual
+2026-06-30,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-06-30,gasto,28.00,Escuela,Papelería,efectivo,manual
+2026-07-01,ingreso,5500.00,Beca / Mesada,Beca mensual,transferencia,banco
+2026-07-01,gasto,65.50,Comida,Torta,efectivo,manual
+2026-07-02,gasto,99.50,Comida,Tacos,efectivo,manual
+2026-07-03,gasto,187.00,Comida,Pizza,efectivo,manual
+2026-07-04,gasto,183.50,Comida,Hamburguesa,efectivo,manual
+2026-07-05,gasto,2800.00,Renta y servicios,Renta del cuarto,transferencia,banco
+2026-07-05,gasto,67.00, Comida,Cafetería de la escuela,efectivo,manual
+2026-07-05,gasto,164.50,Transporte,UBER TRIP,debito,banco
+2026-07-05,gasto,497.00,Súper,CHEDRAUI,debito,banco
+2026-07-06,gasto,129.00,Suscripciones,SPOTIFY MEXICO,debito,banco
+2026-07-06,gasto,53.00,Comida,Torta,debito,banco
+2026-07-07,gasto,50.50,Comida,Torta,efectivo,manual
+2026-07-08,gasto,59.00,Comida,Torta,debito,banco
+2026-07-08,gasto,84.00,Comida,Comida corrida,efectivo,manual
+2026-07-09,gasto,62.50,Comida,Cafetería de la escuela,debito,banco
+2026-07-10,gasto,264.50,Comida,,efectivo,manual
+2026-07-10,gasto,362.00,Salud,Farmacia,debito,banco
+2026-07-12,gasto,219.00,Suscripciones,NETFLIX,debito,banco
+2026-07-12,gasto,58.00,Comida,Café,efectivo,manual
+2026-07-12,gasto,515.10,Súper,SORIANA,debito,banco
+2026-07-13,gasto,75.50,Comida,Comida corrida,debito,banco
+2026-07-13,gasto,78.00,Comida,Cafetería de la escuela,debito,banco
+2026-07-14,gasto,98.00,Comida,Comida corrida,efectivo,manual
+2026-07-15,ingreso,3500.00,Beca / Mesada,Mesada,transferencia,banco
+2026-07-16,gasto,94.00,Comida,Comida corrida,efectivo,manual
+2026-07-18,ingreso,300.00,Trabajo,Clases particulares,efectivo,manual
+2026-07-18,gasto,220.50,Comida,Sushi,efectivo,manual
+2026-07-19,gasto,59.00,Comida,Antojitos,efectivo,manual
+2026-07-19,gasto,110.00,Entretenimiento,Museo,debito,banco
+2026-07-20,gasto,200.00,Renta y servicios,Recarga TELCEL,debito,banco
+2026-07-20,gasto,84.00,Comida,Comida corrida,debito,banco
+2026-07-21,gasto,70.00,Comida,Torta,debito,banco
+2026-07-23,gasto,80.50,Comida,,efectivo,manual
+2026-07-25,gasto,57.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-07-25,gasto,162.00,Transporte,UBER TRIP,debito,banco
+2026-07-26,gasto,88.00,Comida,Cafetería de la escuela,efectivo,manual
+2026-07-30,gasto,71.00,Comida,Cafetería de la escuela,debito,banco
+2026-07-31,gasto,140.00,Comida,Hamburguesa,debito,banco
+2026-07-31,gasto,126.50,Transporte,UBER TRIP,debito,banco
+2026-08-01,ingreso,5500.00,Beca / Mesada,Beca mensual,transferencia,banco
+2026-08-01,ingreso,300.00,Trabajo,Clases particulares,efectivo,manual
+2026-08-01,gasto,86.00,Comida,Comida corrida,debito,banco
+2026-08-01,gasto,65.50,Transporte,UBER TRIP,debito,banco
+2026-08-02,gasto,47.00,Comida,Torta,efectivo,manual
+2026-08-02,gasto,464.00,Súper,SORIANA,debito,banco
+2026-08-02,gasto,85.00,Entretenimiento,Museo,debito,banco
+2026-08-03,gasto,24.00,Transporte,,efectivo,manual
+2026-08-04,gasto,57.00,Comida,Café,efectivo,manual
+2026-08-04,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-08-05,gasto,2800.00,Renta y servicios,Renta del cuarto,transferencia,banco
+2026-08-05,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-08-06,gasto,129.00,Suscripciones,SPOTIFY MEXICO,debito,banco
+2026-08-06,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-08-07,gasto,64.50,Comida,Café,efectivo,manual
+2026-08-07,gasto,193.50,Comida,Sushi,efectivo,manual
+2026-08-07,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-08-07,gasto,124.00,Transporte,UBER TRIP,debito,banco
+2026-08-08,gasto,115.50,Comida,Hamburguesa,debito,banco
+2026-08-09,gasto,79.50,Comida,Antojitos,efectivo,manual
+2026-08-09,gasto,76.50,Comida,Antojitos,efectivo,manual
+2026-08-09,gasto,269.60,Súper,SORIANA,debito,banco
+2026-08-10,gasto,61.50,Comida,Café,efectivo,manual
+2026-08-10,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-08-10,gasto,1850.00,Escuela,Inscripción semestre,transferencia,banco
+2026-08-11,gasto,93.00, Comida,Comida corrida,efectivo,manual
+2026-08-11,gasto,64.00,Comida,Cafetería de la escuela,debito,banco
+2026-08-11,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-08-12,gasto,219.00,Suscripciones,NETFLIX,debito,banco
+2026-08-12,gasto,115.00,Comida,Tacos,efectivo,manual
+2026-08-12,gasto,116.50,Comida,Tacos,efectivo,manual
+2026-08-12,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-08-12,gasto,1420.00,Escuela,Libros del semestre,debito,banco
+2026-08-13,gasto,52.50,Comida,Torta,efectivo,manual
+2026-08-13,gasto,80.50,Comida,Tacos,efectivo,manual
+2026-08-13,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-08-14,gasto,53.00,Comida,Antojitos,efectivo,manual
+2026-08-14,gasto,68.00,Comida,Antojitos,efectivo,manual
+2026-08-14,gasto,152.50,Salud,Consulta médica,debito,banco
+2026-08-15,ingreso,3500.00,Beca / Mesada,Mesada,transferencia,banco
+2026-08-15,ingreso,350.00,Trabajo,Clases particulares,efectivo,manual
+2026-08-15,gasto,65.00,Comida,Antojitos,efectivo,manual
+2026-08-15,gasto,690.00,Escuela,Calculadora científica,debito,banco
+2026-08-16,gasto,244.50,Comida,Sushi,debito,banco
+2026-08-16,gasto,282.00,Súper,WALMART,debito,banco
+2026-08-17,gasto,70.50,Comida,Cafetería de la escuela,efectivo,manual
+2026-08-17,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-08-18,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-08-19,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-08-20,gasto,200.00,Renta y servicios,Recarga TELCEL,debito,banco
+2026-08-20,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-08-21,gasto,146.50,Comida,Hamburguesa,efectivo,manual
+2026-08-21,gasto,48.00,Comida,Torta,efectivo,manual
+2026-08-21,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-08-22,gasto,319.00,Renta y servicios,CFE luz (bimestral),debito,banco
+2026-08-22,gasto,41.00,Comida,Café,debito,banco
+2026-08-23,gasto,61.50,Comida,Café,debito,banco
+2026-08-23,gasto,464.10,Súper,WALMART,debito,banco
+2026-08-24,gasto,49.50,Comida,Café,efectivo,manual
+2026-08-26,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-08-27,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-08-28,gasto,57.00,Comida,Café,efectivo,manual
+2026-08-28,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-08-28,gasto,97.00,Escuela,Copias e impresiones,efectivo,manual
+2026-08-30,gasto,107.00,Comida,Tacos,efectivo,manual
+2026-08-30,gasto,483.00,Súper,SORIANA,debito,banco
+2026-08-31,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-09-01,ingreso,5500.00,Beca / Mesada,Beca mensual,transferencia,banco
+2026-09-01,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-09-02,gasto,79.50,Comida,Comida corrida,efectivo,manual
+2026-09-02,gasto,90.50,Comida,Comida corrida,efectivo,manual
+2026-09-02,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-09-03,gasto,65.00,Comida,Torta,efectivo,manual
+2026-09-03,gasto,113.00,Comida,Tacos,efectivo,manual
+2026-09-03,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-09-03,gasto,101.00,Escuela,Material de laboratorio,efectivo,manual
+2026-09-04,gasto,96.50,Comida,Comida corrida,debito,banco
+2026-09-04,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-09-04,gasto,75.50,Transporte,UBER TRIP,debito,banco
+2026-09-05,ingreso,350.00,Trabajo,Clases particulares,efectivo,manual
+2026-09-05,gasto,2800.00,Renta y servicios,Renta del cuarto,transferencia,banco
+2026-09-05,gasto,66.50,Comida,Cafetería de la escuela,debito,banco
+2026-09-05,gasto,99.50,Comida,Tacos,debito,banco
+2026-09-06,gasto,129.00,Suscripciones,SPOTIFY MEXICO,debito,banco
+2026-09-06,gasto,51.00,Comida,Torta,efectivo,manual
+2026-09-06,gasto,491.10,Súper,WALMART,debito,banco
+2026-09-07,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-09-07,gasto,34.00,Escuela,Papelería,efectivo,manual
+2026-09-08,gasto,60.50,Comida,,efectivo,manual
+2026-09-08,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-09-09,gasto,90.50,Comida,Tacos,efectivo,manual
+2026-09-09,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-09-10,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-09-10,gasto,36.50,Escuela,Papelería,efectivo,manual
+2026-09-11,gasto,245.00,Comida,Sushi,efectivo,manual
+2026-09-11,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-09-12,ingreso,500.00,Trabajo,Clases particulares,efectivo,manual
+2026-09-12,gasto,219.00,Suscripciones,NETFLIX,debito,banco
+2026-09-12,gasto,159.50,Transporte,UBER TRIP,debito,banco
+2026-09-13,gasto,274.40,Súper,CHEDRAUI,debito,banco
+2026-09-13,gasto,295.00,Entretenimiento,Bar con amigos,debito,banco
+2026-09-14,gasto,60.50,Comida,Tacos,debito,banco
+2026-09-14,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-09-15,ingreso,3500.00,Beca / Mesada,Mesada,transferencia,banco
+2026-09-16,gasto,60.00,Comida,Café,debito,banco
+2026-09-16,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-09-16,gasto,940.00,Transporte,Autobús a casa (puente),debito,banco
+2026-09-17,gasto,64.50,Comida,Torta,debito,banco
+2026-09-17,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-09-17,gasto,360.00,Ropa y personal,Tenis,debito,banco
+2026-09-18,gasto,70.00,Comida,Antojitos,debito,banco
+2026-09-18,gasto,65.00,Comida,Cafetería de la escuela,debito,banco
+2026-09-18,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-09-18,gasto,122.00,Transporte,UBER TRIP,debito,banco
+2026-09-18,gasto,434.00,Ropa y personal,Tenis,debito,banco
+2026-09-19,gasto,46.50,Comida,Torta,efectivo,manual
+2026-09-19,gasto,72.00,Comida,Café,efectivo,manual
+2026-09-20,gasto,200.00,Renta y servicios,Recarga TELCEL,debito,banco
+2026-09-20,gasto,60.50,Comida,Antojitos,efectivo,manual
+2026-09-20,gasto,191.50,Comida,Sushi,efectivo,manual
+2026-09-20,gasto,442.20,Súper,CHEDRAUI,debito,banco
+2026-09-21,gasto,70.00,Comida,Tacos,efectivo,manual
+2026-09-21,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-09-22,gasto,108.50,Comida,Tacos,efectivo,manual
+2026-09-22,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-09-23,gasto,41.50,Comida,Café,efectivo,manual
+2026-09-23,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-09-24,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-09-25,gasto,146.00,Comida,Pizza,debito,banco
+2026-09-25,gasto,72.00,Comida,Tacos,debito,banco
+2026-09-25,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-09-25,gasto,154.00,Transporte,UBER TRIP,debito,banco
+2026-09-25,gasto,150.00,Escuela,Papelería,efectivo,manual
+2026-09-26,gasto,107.00,Comida,Comida corrida,efectivo,manual
+2026-09-26,gasto,36.50,Comida,Antojitos,debito,banco
+2026-09-27,gasto,255.50,Comida,Sushi,debito,banco
+2026-09-27,gasto,198.00,Comida,Pizza,debito,banco
+2026-09-27,gasto,386.00,Súper,CHEDRAUI,debito,banco
+2026-09-28,gasto,74.50,Comida,Café,efectivo,manual
+2026-09-28,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-09-29,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-10-01,ingreso,5500.00,Beca / Mesada,Beca mensual,transferencia,banco
+2026-10-01,gasto,41.00,Comida,Café,debito,banco
+2026-10-01,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-10-02,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-10-02,gasto,69.00,Transporte,UBER TRIP,debito,banco
+2026-10-02,gasto,225.00,Entretenimiento,Bar con amigos,debito,banco
+2026-10-03,gasto,45.00,Comida,Café,efectivo,manual
+2026-10-03,gasto,104.50,Comida,Comida corrida,debito,banco
+2026-10-04,gasto,212.50,Comida,Sushi,debito,banco
+2026-10-04,gasto,49.50,Comida,Torta,debito,banco
+2026-10-04,gasto,501.50,Súper,SORIANA,debito,banco
+2026-10-05,gasto,2800.00,Renta y servicios,Renta del cuarto,transferencia,banco
+2026-10-05,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-10-06,gasto,129.00,Suscripciones,SPOTIFY MEXICO,debito,banco
+2026-10-06,gasto,77.50,Comida,Cafetería de la escuela,efectivo,manual
+2026-10-08,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-10-09,gasto,75.00,Comida,Antojitos,debito,banco
+2026-10-09,gasto,52.00,Comida,Antojitos,efectivo,manual
+2026-10-09,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-10-10,ingreso,400.00,Trabajo,Clases particulares,efectivo,manual
+2026-10-10,gasto,38.50,Comida,Antojitos,efectivo,manual
+2026-10-11,gasto,61.50,Comida,Cafetería de la escuela,debito,banco
+2026-10-11,gasto,86.50,Transporte,UBER TRIP,debito,banco
+2026-10-11,gasto,441.30,Súper,,debito,banco
+2026-10-12,gasto,219.00,Suscripciones,NETFLIX,debito,banco
+2026-10-12,gasto,61.00,Comida,Cafetería de la escuela,debito,banco
+2026-10-12,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-10-13,gasto,85.00,Comida,Comida corrida,efectivo,manual
+2026-10-13,gasto,67.00,comida,Tacos,efectivo,manual
+2026-10-13,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-10-14,gasto,56.00,Comida,Torta,efectivo,manual
+2026-10-14,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-10-15,ingreso,3500.00,Beca / Mesada,Mesada,transferencia,banco
+2026-10-15,gasto,80.50,Comida,Tacos,efectivo,manual
+2026-10-15,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-10-16,gasto,51.00,Comida,,debito,banco
+2026-10-16,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-10-17,gasto,81.00,Comida,Comida corrida,debito,banco
+2026-10-17,gasto,211.00,Comida,Sushi,efectivo,manual
+2026-10-18,gasto,93.50,Comida,Tacos,efectivo,manual
+2026-10-18,gasto,395.10,Súper,WALMART,debito,banco
+2026-10-19,gasto,93.50,Comida,Cafetería de la escuela,debito,banco
+2026-10-19,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-10-20,gasto,200.00,Renta y servicios,Recarga TELCEL,debito,banco
+2026-10-20,gasto,61.50,Comida,Torta,efectivo,manual
+2026-10-20,gasto,24.00,Transporte,Metro / camión,efectivo,manual
+2026-10-21,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-10-22,gasto,218.00,Renta y servicios,CFE luz (bimestral),debito,banco
+2026-10-22,gasto,69.50,Comida,Café,efectivo,manual
+2026-10-23,gasto,54.50,Comida,Café,efectivo,manual
+2026-10-23,gasto,12.00,Transporte,Metro / camión,efectivo,manual
+2026-10-24,ingreso,300.00,Trabajo,Clases particulares,efectivo,manual
+2026-10-24,gasto,66.50,Comida,Torta,efectivo,manual
+2026-10-24,gasto,112.50,Comida,Tacos,efectivo,manual
+2026-10-24,gasto,71.00,Transporte,UBER TRIP,debito,banco
+2026-10-24,gasto,250.00,Entretenimiento,Cine,debito,banco
+2026-10-25,gasto,169.00,Comida,Pizza,efectivo,manual
+2026-10-26,gasto,83.00,Comida,Tacos,efectivo,manual
+2026-10-26,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-10-27,gasto,66.50,Comida,Torta,efectivo,manual
+2026-10-28,gasto,103.00,comida,Comida corrida,efectivo,manual
+2026-10-28,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-10-29,gasto,71.00,Comida,Cafetería de la escuela,debito,banco
+2026-10-29,gasto,30.00,Transporte,Metro / camión,efectivo,manual
+2026-10-30,gasto,153.50,Comida,Pizza,efectivo,manual
+2026-10-30,gasto,18.00,Transporte,Metro / camión,efectivo,manual
+2026-10-31,ingreso,550.00,Trabajo,Clases particulares,efectivo,manual

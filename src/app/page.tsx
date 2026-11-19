@@ -16,7 +16,7 @@ import { cerrarSesion } from "./login/actions";
 export default function Home() {
   return (
     <>
-      <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 px-4 pt-4 pb-24">
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 px-4 pt-4 pb-[calc(6rem+var(--seguro-abajo))]">
         <header className="flex items-center justify-between">
           <h1 className="text-lg font-semibold">Nuevo movimiento</h1>
           <form action={cerrarSesion}>

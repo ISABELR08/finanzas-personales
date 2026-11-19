@@ -23,6 +23,10 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  // "cover" deja que la app ocupe toda la pantalla del iPhone y activa
+  // env(safe-area-inset-*), con lo que podemos apartar los botones de la
+  // franja inferior donde vive el gesto de "ir a inicio".
+  viewportFit: "cover",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
