@@ -17,7 +17,13 @@ type Aviso = { clase: "ok" | "error"; texto: string } | null;
  * Captura rápida: monto → categoría → Guardar.
  * Fecha, descripción y método de pago son opcionales y viven en "Más detalles".
  */
-export function CapturaRapida({ categorias }: { categorias: Categoria[] }) {
+export function CapturaRapida({
+  categorias,
+  demo = false,
+}: {
+  categorias: Categoria[];
+  demo?: boolean; // en la demo pública no se guarda nada
+}) {
   const [tipo, setTipo] = useState<TipoMovimiento>("gasto");
   const [montoTexto, setMontoTexto] = useState("");
   const [categoriaId, setCategoriaId] = useState<string | null>(null);
@@ -41,6 +47,16 @@ export function CapturaRapida({ categorias }: { categorias: Categoria[] }) {
     evento.preventDefault();
     if (monto === null || categoriaId === null) return;
     const categoria = categorias.find((c) => c.id === categoriaId);
+
+    if (demo) {
+      setAviso({
+        clase: "ok",
+        texto: `Demo: aquí se guardaría ${formatoMXN(monto)} en ${categoria?.nombre ?? "—"}`,
+      });
+      setMontoTexto("");
+      setCategoriaId(null);
+      return;
+    }
 
     iniciarGuardado(async () => {
       const resultado = await crearMovimiento({
@@ -95,7 +111,7 @@ export function CapturaRapida({ categorias }: { categorias: Categoria[] }) {
 
       {/* Monto */}
       <label className="flex items-baseline justify-center gap-1 py-2">
-        <span className="text-4xl font-semibold text-neutral-400">$</span>
+        <span className="text-5xl font-semibold text-neutral-400">$</span>
         <input
           ref={campoMonto}
           value={montoTexto}
@@ -108,12 +124,19 @@ export function CapturaRapida({ categorias }: { categorias: Categoria[] }) {
           autoComplete="off"
           placeholder="0"
           aria-label="Monto en pesos"
-          className="w-56 bg-transparent text-center text-6xl font-semibold tabular-nums outline-none placeholder:text-neutral-300 dark:placeholder:text-neutral-700"
+          // El ancho sigue al número de caracteres ("ch") para que el signo
+          // de pesos quede pegado a la cifra y el conjunto se vea centrado.
+          style={{ width: `${Math.min(Math.max(montoTexto.length, 1), 9)}ch` }}
+          className="min-w-0 bg-transparent text-6xl font-semibold tabular-nums outline-none placeholder:text-neutral-300 dark:placeholder:text-neutral-700"
         />
       </label>
 
       {/* Categorías */}
-      <div className="grid grid-cols-3 gap-2" role="group" aria-label="Categoría">
+      <div
+        className="grid grid-cols-3 gap-2"
+        role="group"
+        aria-label="Categoría"
+      >
         {visibles.map((c) => (
           <button
             key={c.id}
@@ -150,7 +173,10 @@ export function CapturaRapida({ categorias }: { categorias: Categoria[] }) {
           </label>
 
           <label className="flex flex-col gap-1 text-sm font-medium">
-            Fecha {fecha === "" && <span className="font-normal text-neutral-500">(hoy)</span>}
+            Fecha{" "}
+            {fecha === "" && (
+              <span className="font-normal text-neutral-500">(hoy)</span>
+            )}
             <input
               type="date"
               value={fecha}
@@ -166,7 +192,9 @@ export function CapturaRapida({ categorias }: { categorias: Categoria[] }) {
                 <button
                   key={m.valor}
                   type="button"
-                  onClick={() => setMetodoPago(metodoPago === m.valor ? null : m.valor)}
+                  onClick={() =>
+                    setMetodoPago(metodoPago === m.valor ? null : m.valor)
+                  }
                   aria-pressed={metodoPago === m.valor}
                   className={`rounded-full border px-3 py-1.5 text-sm font-normal ${
                     metodoPago === m.valor
@@ -182,22 +210,26 @@ export function CapturaRapida({ categorias }: { categorias: Categoria[] }) {
         </div>
       </details>
 
-      <button
-        type="submit"
-        disabled={!listo}
-        className={`rounded-2xl py-4 text-lg font-semibold text-white transition-opacity disabled:opacity-40 ${colorTipo}`}
-      >
-        {guardando ? "Guardando…" : "Guardar"}
-      </button>
+      {/* Guardar queda fijo sobre la barra inferior: siempre a la vista, sin
+          tener que desplazar la pantalla (clave para registrar en segundos). */}
+      <div className="sticky bottom-[calc(4.25rem+var(--seguro-abajo))] flex flex-col gap-2 bg-background pt-2 pb-1">
+        <button
+          type="submit"
+          disabled={!listo}
+          className={`rounded-2xl py-4 text-lg font-semibold text-white transition-opacity disabled:opacity-40 ${colorTipo}`}
+        >
+          {guardando ? "Guardando…" : "Guardar"}
+        </button>
 
-      <p
-        role="status"
-        className={`min-h-5 text-center text-sm ${
-          aviso?.clase === "error" ? "text-red-600" : "text-emerald-600"
-        }`}
-      >
-        {aviso?.texto}
-      </p>
+        <p
+          role="status"
+          className={`min-h-5 text-center text-sm ${
+            aviso?.clase === "error" ? "text-red-600" : "text-emerald-600"
+          }`}
+        >
+          {aviso?.texto}
+        </p>
+      </div>
     </form>
   );
 }

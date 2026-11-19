@@ -19,6 +19,15 @@ const salidas = [
   { archivo: "icon-512.png", lado: 512, redondeo: 112, escala: 1 },
   { archivo: "icon-maskable-512.png", lado: 512, redondeo: 0, escala: 0.8 },
   { archivo: "apple-touch-icon.png", lado: 180, redondeo: 0, escala: 0.9 },
+  // El iPhone también busca el icono en la raíz del sitio con estos dos nombres
+  // fijos, aunque la página no lo declare. Tenerlos ahí evita que muestre solo
+  // la inicial del nombre ("F") si no logra leer la etiqueta de la página.
+  { archivo: "../apple-touch-icon.png", lado: 180, redondeo: 0, escala: 0.9 },
+  { archivo: "../apple-touch-icon-precomposed.png", lado: 180, redondeo: 0, escala: 0.9 },
+  // Convención de Next.js: src/app/apple-icon.png genera sola la etiqueta
+  // <link rel="apple-touch-icon" sizes="180x180"> con un nombre único por versión.
+  { archivo: "../../src/app/apple-icon.png", lado: 180, redondeo: 0, escala: 0.9 },
+  { archivo: "../../src/app/icon.png", lado: 192, redondeo: 112, escala: 1 },
 ];
 
 for (const { archivo, lado, redondeo, escala } of salidas) {

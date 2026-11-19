@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Archivos de pdf.js copiados por scripts/copiar-pdfjs.mjs:
     "public/pdfjs/**",
+    // La parte de análisis es Python (y su entorno virtual trae JS ajeno):
+    "analysis/**",
   ]),
 ]);
 

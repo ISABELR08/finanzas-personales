@@ -16,10 +16,11 @@ import {
 type Props = {
   movimientos: MovimientoConCategoria[]; // ya ordenados del más reciente al más antiguo
   categorias: Categoria[];
+  soloLectura?: boolean; // en la demo: se ve igual, pero no abre la edición
 };
 
 /** Lista agrupada por día. Tocar un movimiento abre su edición. */
-export function ListaMovimientos({ movimientos, categorias }: Props) {
+export function ListaMovimientos({ movimientos, categorias, soloLectura = false }: Props) {
   const [enEdicion, setEnEdicion] = useState<MovimientoConCategoria | null>(null);
   const dialogo = useRef<HTMLDialogElement>(null);
 
@@ -61,6 +62,7 @@ export function ListaMovimientos({ movimientos, categorias }: Props) {
                     <button
                       type="button"
                       onClick={() => abrir(m)}
+                      disabled={soloLectura}
                       className="flex w-full items-center gap-3 py-2.5 text-left"
                     >
                       <IconoCategoria

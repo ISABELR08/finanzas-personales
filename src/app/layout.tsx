@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   description: "Registro y análisis de gastos personales en MXN",
   // Para que iOS la abra a pantalla completa al añadirla a la pantalla de inicio.
   appleWebApp: { capable: true, title: "Finanzas", statusBarStyle: "default" },
-  icons: { apple: "/icons/apple-touch-icon.png" },
 };
 
 export const viewport: Viewport = {

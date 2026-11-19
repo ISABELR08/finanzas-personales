@@ -30,9 +30,13 @@ export async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const enLogin = request.nextUrl.pathname.startsWith("/login");
+  const ruta = request.nextUrl.pathname;
+  const enLogin = ruta.startsWith("/login");
+  // La demo usa datos inventados incluidos en el código: no toca la base
+  // de datos, así que puede verse sin cuenta.
+  const esDemo = ruta === "/demo" || ruta.startsWith("/demo/");
 
-  if (!user && !enLogin) {
+  if (!user && !enLogin && !esDemo) {
     return redirigir(request, response, "/login");
   }
   if (user && enLogin) {
