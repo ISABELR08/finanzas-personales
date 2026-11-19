@@ -8,13 +8,25 @@ export type FilaBanco = {
   descripcion: string;
   monto: number; // siempre positivo
   tipo: TipoMovimiento;
+  /** Folio que el banco asigna al movimiento (solo en PDF). */
+  referencia?: string;
+  /** No se pudo confirmar con el saldo si es depósito o retiro: revisar. */
+  dudoso?: boolean;
 };
 
-export type ResultadoCSV =
-  | { ok: true; filas: FilaBanco[]; descartadas: number }
+export type ResultadoLectura =
+  | {
+      ok: true;
+      filas: FilaBanco[];
+      descartadas: number;
+      /** ¿Las sumas coinciden con los totales impresos? (solo en PDF) */
+      cuadra?: boolean;
+    }
   | { ok: false; error: string };
 
-const MESES: Record<string, number> = {
+export type ResultadoCSV = ResultadoLectura;
+
+export const MESES: Record<string, number> = {
   ENE: 1, JAN: 1, FEB: 2, MAR: 3, ABR: 4, APR: 4, MAY: 5, JUN: 6,
   JUL: 7, AGO: 8, AUG: 8, SEP: 9, SET: 9, OCT: 10, NOV: 11, DIC: 12, DEC: 12,
 };

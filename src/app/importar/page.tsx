@@ -13,7 +13,7 @@ export default function PaginaImportar() {
         <header>
           <h1 className="text-lg font-semibold">Importar estado de cuenta</h1>
           <p className="text-sm text-neutral-500">
-            Sube el CSV de tu banco, revisa los movimientos y guarda solo los que quieras.
+            Elige el PDF (Santander débito) o un CSV de tu banco, revisa los movimientos y guarda solo los que quieras.
           </p>
         </header>
         <Suspense fallback={<p className="py-20 text-center text-neutral-500">Cargando…</p>}>

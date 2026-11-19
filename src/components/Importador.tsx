@@ -9,7 +9,7 @@ import {
 } from "@/app/importar/actions";
 import { fechaCorta, formatoMXN } from "@/lib/formato";
 import { sugerirCategoria, type Historial } from "@/lib/importar/categorizar";
-import { decodificar, leerCSV } from "@/lib/importar/csv";
+import { decodificar, leerCSV, type ResultadoLectura } from "@/lib/importar/csv";
 import { asignarOcurrencias, calcularHuella } from "@/lib/importar/huella";
 import type { Categoria } from "@/lib/tipos";
 
@@ -24,7 +24,14 @@ const DOS_DIAS = 2 * 86_400_000;
 
 type Estado =
   | { paso: "elegir"; error?: string }
-  | { paso: "revisar"; archivo: string; renglones: Renglon[]; descartadas: number; error?: string }
+  | {
+      paso: "revisar";
+      archivo: string;
+      renglones: Renglon[];
+      descartadas: number;
+      cuadra?: boolean; // solo PDF: ¿las sumas coinciden con los totales impresos?
+      error?: string;
+    }
   | { paso: "listo"; guardados: number; omitidos: number };
 
 /**
@@ -40,6 +47,7 @@ export function Importador({
   historial: Historial;
 }) {
   const [estado, setEstado] = useState<Estado>({ paso: "elegir" });
+  const [progreso, setProgreso] = useState("");
   const [ocupado, iniciar] = useTransition();
 
   function alElegir(evento: React.ChangeEvent<HTMLInputElement>) {
@@ -48,7 +56,21 @@ export function Importador({
     if (!archivo) return;
 
     iniciar(async () => {
-      const resultado = leerCSV(decodificar(await archivo.arrayBuffer()));
+      const bytes = await archivo.arrayBuffer();
+      const esPDF = archivo.type === "application/pdf" || /\.pdf$/i.test(archivo.name);
+      let resultado: ResultadoLectura;
+      try {
+        if (esPDF) {
+          // El lector de PDF pesa varios MB: se descarga solo si hace falta.
+          const { leerPDF } = await import("@/lib/importar/pdf-navegador");
+          resultado = await leerPDF(bytes, setProgreso);
+        } else {
+          resultado = leerCSV(decodificar(bytes));
+        }
+      } catch {
+        resultado = { ok: false, error: "No se pudo leer el archivo. Inténtalo de nuevo." };
+      }
+      setProgreso("");
       if (!resultado.ok) {
         setEstado({ paso: "elegir", error: resultado.error });
         return;
@@ -66,6 +88,7 @@ export function Importador({
         paso: "revisar",
         archivo: archivo.name,
         descartadas,
+        cuadra: resultado.cuadra,
         renglones: filas.map((f, i) => {
           const duplicado = existentes.has(huellas[i]);
           // ¿Hay una captura manual del mismo monto en fechas cercanas?
@@ -99,13 +122,16 @@ export function Importador({
       <div className="flex flex-col gap-4">
         <label className="flex cursor-pointer flex-col items-center gap-3 rounded-2xl border-2 border-dashed border-neutral-300 px-4 py-10 text-center dark:border-neutral-700">
           <FileUp className="size-8 text-neutral-500" strokeWidth={1.5} aria-hidden />
-          <span className="font-medium">{ocupado ? "Leyendo archivo…" : "Elegir archivo CSV"}</span>
+          <span className="font-medium">
+            {ocupado ? progreso || "Leyendo archivo…" : "Elegir archivo PDF o CSV"}
+          </span>
           <span className="text-sm text-neutral-500">
-            El archivo se lee en tu dispositivo; no se sube a ningún servidor.
+            El archivo se lee en tu dispositivo; no se sube a ningún servidor. Un PDF tarda
+            alrededor de un minuto.
           </span>
           <input
             type="file"
-            accept=".csv,.txt,text/csv,text/plain"
+            accept=".pdf,.csv,.txt,application/pdf,text/csv,text/plain"
             onChange={alElegir}
             disabled={ocupado}
             className="sr-only"
@@ -163,14 +189,17 @@ export function Importador({
     if (estado.paso !== "revisar") return;
     iniciar(async () => {
       const r = await importarMovimientos(
-        seleccionados.map(({ fecha, descripcion, monto, tipo, ocurrencia, categoriaId }) => ({
-          fecha,
-          descripcion,
-          monto,
-          tipo,
-          ocurrencia,
-          categoriaId,
-        })),
+        seleccionados.map(
+          ({ fecha, descripcion, monto, tipo, ocurrencia, categoriaId, referencia }) => ({
+            fecha,
+            descripcion,
+            monto,
+            tipo,
+            ocurrencia,
+            categoriaId,
+            referencia,
+          }),
+        ),
       );
       if (r.ok) setEstado({ paso: "listo", guardados: r.guardados, omitidos: r.omitidos });
       else setEstado({ ...estado, error: r.error });
@@ -188,6 +217,18 @@ export function Importador({
           {estado.descartadas > 0 && ` · ${estado.descartadas} renglones sin movimiento ignorados`}
         </p>
       </div>
+
+      {estado.cuadra === true && (
+        <p className="rounded-xl bg-emerald-50 px-3 py-2 text-sm text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
+          Las sumas de depósitos y retiros coinciden con los totales del estado de cuenta.
+        </p>
+      )}
+      {estado.cuadra === false && (
+        <p role="alert" className="rounded-xl bg-amber-50 px-3 py-2 text-sm text-amber-800 dark:bg-amber-950 dark:text-amber-200">
+          Las sumas no coinciden con los totales impresos en el estado de cuenta. Alguna
+          cifra se leyó mal: compara los montos con tu PDF antes de guardar.
+        </p>
+      )}
 
       <ul className="flex flex-col gap-2">
         {renglones.map((r, i) => (
@@ -220,6 +261,12 @@ export function Importador({
                 <span className="block text-sm break-words">{r.descripcion}</span>
               </span>
             </label>
+            {r.dudoso && (
+              <p className="mt-2 pl-8 text-xs font-medium text-amber-600">
+                No pude confirmar este renglón con el saldo. Revisa el monto y si es depósito
+                o retiro; puedes corregirlo después en la vista del mes.
+              </p>
+            )}
             {r.posibleManual && (
               <p className="mt-2 pl-8 text-xs font-medium text-amber-600">
                 Parece que ya lo capturaste a mano. Márcalo solo si es otro movimiento.

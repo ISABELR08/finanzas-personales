@@ -58,3 +58,6 @@ __pycache__/
 
 # configuración local de herramientas
 /.claude/
+
+# archivos de pdf.js copiados por scripts/copiar-pdfjs.mjs
+/public/pdfjs/

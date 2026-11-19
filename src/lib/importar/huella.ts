@@ -3,7 +3,10 @@ import { normalizar } from "./texto";
 
 /** Lo que identifica a un renglón, sin contar repeticiones. */
 function base(f: FilaBanco): string {
-  return [f.fecha, Math.round(f.monto * 100), f.tipo, normalizar(f.descripcion)].join("|");
+  // Si el banco dio un folio, identifica mejor al movimiento que la
+  // descripción (que en un PDF sale de un OCR y podría variar una letra).
+  const identidad = f.referencia ? `FOLIO:${f.referencia}` : normalizar(f.descripcion);
+  return [f.fecha, Math.round(f.monto * 100), f.tipo, identidad].join("|");
 }
 
 /**

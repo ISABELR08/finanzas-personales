@@ -52,8 +52,8 @@ function redirigir(request: NextRequest, origen: NextResponse, ruta: string) {
 }
 
 export const config = {
-  // Todo excepto archivos estáticos, imágenes y los archivos de la PWA.
+  // Todo excepto archivos estáticos, imágenes, la PWA y el lector de PDF.
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|manifest.webmanifest|sw.js|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|manifest.webmanifest|sw.js|pdfjs/|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
   ],
 };

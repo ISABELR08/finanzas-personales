@@ -25,7 +25,8 @@ function filaValida(f: FilaAImportar): boolean {
     (f.tipo === "gasto" || f.tipo === "ingreso") &&
     typeof f.descripcion === "string" &&
     Number.isInteger(f.ocurrencia) &&
-    f.ocurrencia >= 0
+    f.ocurrencia >= 0 &&
+    (f.referencia === undefined || /^\d{5,8}$/.test(f.referencia))
   );
 }
 
