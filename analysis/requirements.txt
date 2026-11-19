@@ -1,0 +1,9 @@
+# Dependencias del análisis. Instalar con:
+#   python3 -m venv analysis/.venv
+#   source analysis/.venv/bin/activate
+#   pip install -r analysis/requirements.txt
+pandas>=2.2
+matplotlib>=3.8
+seaborn>=0.13
+notebook>=7
+nbconvert>=7
