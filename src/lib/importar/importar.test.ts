@@ -111,7 +111,7 @@ describe("huella contra duplicados", () => {
 
 describe("sugerirCategoria", () => {
   const cat = (id: string, nombre: string, tipo: "gasto" | "ingreso"): Categoria => ({
-    id, nombre, tipo, icono: "tag", orden: 0, archivada: false,
+    id, nombre, tipo, icono: "tag", orden: 0, archivada: false, es_ahorro: false,
   });
   const categorias = [
     cat("comida", "Comida", "gasto"),

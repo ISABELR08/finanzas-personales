@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { GestorCategorias } from "@/components/GestorCategorias";
 import { Navegacion } from "@/components/Navegacion";
 import { createClient } from "@/lib/supabase/server";
-import type { Categoria } from "@/lib/tipos";
+import { COLUMNAS_CATEGORIA, type Categoria } from "@/lib/tipos";
 
 export default function PaginaCategorias() {
   return (
@@ -27,7 +27,7 @@ async function Lista() {
   const supabase = await createClient();
   const { data } = await supabase
     .from("categorias")
-    .select("id, nombre, tipo, icono, orden, archivada")
+    .select(COLUMNAS_CATEGORIA)
     .order("orden")
     .overrideTypes<Categoria[]>();
 

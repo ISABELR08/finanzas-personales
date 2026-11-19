@@ -80,7 +80,7 @@ def descargar_movimientos(base: str, llave: str, token: str) -> list[dict]:
         consulta = urllib.parse.urlencode(
             {
                 # categorias(nombre) trae el nombre de la categoría relacionada
-                "select": "fecha,tipo,monto,descripcion,metodo_pago,origen,categorias(nombre)",
+                "select": "fecha,tipo,monto,descripcion,metodo_pago,origen,categorias(nombre,es_ahorro)",
                 "order": "fecha.asc,created_at.asc",
                 "limit": POR_PAGINA,
                 "offset": len(filas),
@@ -110,7 +110,9 @@ def main() -> None:
             escritor.writerow(
                 {
                     "fecha": m["fecha"],
-                    "tipo": m["tipo"],
+                    # Pasar dinero a la cuenta de ahorro no es un gasto: se exporta
+                    # con su propio tipo para que el análisis no lo mezcle.
+                    "tipo": "ahorro" if (m.get("categorias") or {}).get("es_ahorro") else m["tipo"],
                     "monto": m["monto"],
                     "categoria": (m.get("categorias") or {}).get("nombre") or "Sin categoría",
                     "descripcion": m.get("descripcion") or "",

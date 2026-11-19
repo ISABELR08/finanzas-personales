@@ -4,6 +4,7 @@ import { VistaMes } from "@/components/VistaMes";
 import { esMesValido, mesActual, rangoDelMes } from "@/lib/fechas";
 import { createClient } from "@/lib/supabase/server";
 import {
+  COLUMNAS_CATEGORIA,
   COLUMNAS_MOVIMIENTO,
   type Categoria,
   type MovimientoConCategoria,
@@ -47,7 +48,7 @@ async function Mes({ searchParams }: Props) {
       .overrideTypes<MovimientoConCategoria[]>(),
     supabase
       .from("categorias")
-      .select("id, nombre, tipo, icono, orden, archivada")
+      .select(COLUMNAS_CATEGORIA)
       .order("orden")
       .overrideTypes<Categoria[]>(),
   ]);

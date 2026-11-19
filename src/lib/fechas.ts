@@ -12,6 +12,11 @@ export function mesActual(): string {
   return `${anio}-${mes}`;
 }
 
+/** Fecha de hoy ("AAAA-MM-DD") en hora del centro de México. */
+export function hoyMX(): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Mexico_City" }).format(new Date());
+}
+
 export function esMesValido(texto: unknown): texto is string {
   return typeof texto === "string" && /^\d{4}-(0[1-9]|1[0-2])$/.test(texto);
 }

@@ -20,8 +20,11 @@ type Aviso = { clase: "ok" | "error"; texto: string } | null;
 export function CapturaRapida({
   categorias,
   demo = false,
+  porcentajeAhorro,
 }: {
   categorias: Categoria[];
+  /** Si se indica, al guardar un ingreso recuerda cuánto apartar. */
+  porcentajeAhorro?: number;
   demo?: boolean; // en la demo pública no se guarda nada
 }) {
   const [tipo, setTipo] = useState<TipoMovimiento>("gasto");
@@ -74,7 +77,11 @@ export function CapturaRapida({
       }
       setAviso({
         clase: "ok",
-        texto: `Guardado: ${formatoMXN(monto)} en ${categoria?.nombre ?? "—"}`,
+        texto:
+          `Guardado: ${formatoMXN(monto)} en ${categoria?.nombre ?? "—"}` +
+          (tipo === "ingreso" && porcentajeAhorro
+            ? `. Aparta ${formatoMXN((monto * porcentajeAhorro) / 100)} (${porcentajeAhorro}%) para tu ahorro.`
+            : ""),
       });
       // Listo para el siguiente: se limpia lo que cambia en cada captura y se
       // conserva el método de pago, que suele repetirse.

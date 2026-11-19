@@ -1,17 +1,19 @@
-import { CalendarDays, CirclePlus, FileUp, Tags } from "lucide-react";
+import { CalendarDays, CirclePlus, FileUp, PiggyBank, Tags } from "lucide-react";
 import Link from "next/link";
 
 const SECCIONES = [
   { clave: "registrar", href: "/", etiqueta: "Registrar", Icono: CirclePlus },
   { clave: "mes", href: "/mes", etiqueta: "Mes", Icono: CalendarDays },
+  { clave: "ahorro", href: "/ahorro", etiqueta: "Ahorro", Icono: PiggyBank },
   { clave: "categorias", href: "/categorias", etiqueta: "Categorías", Icono: Tags },
   { clave: "importar", href: "/importar", etiqueta: "Importar", Icono: FileUp },
 ] as const;
 
-// La demo pública solo tiene las dos pantallas que no necesitan cuenta.
+// La demo pública solo tiene las pantallas que funcionan con datos inventados.
 const SECCIONES_DEMO = [
   { clave: "registrar", href: "/demo/registrar", etiqueta: "Registrar", Icono: CirclePlus },
   { clave: "mes", href: "/demo", etiqueta: "Mes", Icono: CalendarDays },
+  { clave: "ahorro", href: "/demo/ahorro", etiqueta: "Ahorro", Icono: PiggyBank },
 ] as const;
 
 type Props = { activa: (typeof SECCIONES)[number]["clave"]; demo?: boolean };
@@ -33,7 +35,7 @@ export function Navegacion({ activa, demo = false }: Props) {
             <Link
               href={href}
               aria-current={activa === clave ? "page" : undefined}
-              className={`flex flex-col items-center gap-0.5 pt-2.5 pb-1.5 text-xs font-medium ${
+              className={`flex flex-col items-center gap-0.5 pt-2.5 pb-1.5 text-[0.6875rem] font-medium ${
                 activa === clave ? "text-emerald-600" : "text-neutral-500"
               }`}
             >

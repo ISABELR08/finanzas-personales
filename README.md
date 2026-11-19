@@ -25,6 +25,7 @@ Soy estudiante, vivo en México y quería saber en qué se me va el dinero. Las 
 - **Vista del mes.** Total gastado, ingresos, balance, gasto por categoría y movimientos agrupados por día, con edición y borrado.
 - **Categorías editables.** Se pueden crear, renombrar, cambiar de icono y archivar sin perder el historial.
 - **Importar estados de cuenta (PDF y CSV).** Extrae los movimientos, sugiere una categoría, permite revisar antes de guardar y no duplica nada si se importa dos veces el mismo periodo. Cada movimiento indica si se capturó a mano o viene del banco.
+- **Ahorro.** Anoto cuánto dinero tengo y qué porcentaje de cada ingreso quiero ahorrar; la app calcula cuánto apartar, cuánto me queda para gastar por día hasta el próximo ingreso y lleva el total ahorrado. Lo apartado no cuenta como gasto.
 - **Privada.** Inicio de sesión y seguridad por fila en la base de datos: solo yo veo mis datos.
 - **Instalable.** Es una PWA: se añade a la pantalla de inicio del celular y abre a pantalla completa.
 
@@ -77,7 +78,7 @@ Técnicas utilizadas:
 | App | Next.js 16 (App Router, Server Actions), React 19, TypeScript, Tailwind CSS 4 |
 | Datos y acceso | Supabase: PostgreSQL, autenticación y seguridad por fila (RLS) |
 | Importación | pdf.js, tesseract.js (OCR en el navegador), PapaParse |
-| Pruebas | Vitest: 33 pruebas sobre la lectura de CSV y PDF, duplicados y categorización |
+| Pruebas | Vitest: 43 pruebas sobre la lectura de CSV y PDF, duplicados, categorización y cálculo del ahorro |
 | Análisis | Python, pandas, matplotlib, seaborn, Jupyter |
 | Despliegue | Vercel |
 
@@ -93,9 +94,10 @@ Técnicas utilizadas:
 ## Estructura del repositorio
 
 ```
-src/app/            Páginas: captura, mes, categorías, importar, login y demo
+src/app/            Páginas: captura, mes, ahorro, categorías, importar, login y demo
 src/components/     Componentes de la interfaz
 src/lib/importar/   Lectura de CSV y PDF, huellas y categorización (con pruebas)
+src/lib/ahorro/     Cálculo de la meta de ahorro y del dinero disponible (con pruebas)
 supabase/           Esquema de la base de datos y políticas de seguridad
 analysis/           Notebook, exportador de datos y generador de datos de ejemplo
 data/ejemplo/       CSV bancario inventado para probar la importación
@@ -113,7 +115,7 @@ Requisitos: Node.js 22 y una cuenta gratuita de [Supabase](https://supabase.com)
    ```bash
    npm install
    ```
-2. Crear un proyecto en Supabase y ejecutar `supabase/migrations/0001_esquema_inicial.sql` en su SQL Editor.
+2. Crear un proyecto en Supabase y ejecutar, en orden, los archivos de `supabase/migrations/` en su SQL Editor.
 3. Crear un usuario en **Authentication → Users** y desactivar el registro de nuevos usuarios.
 4. Copiar `.env.example` como `.env.local` y poner la URL del proyecto y su llave pública.
 5. Iniciar el servidor de desarrollo y abrir `http://localhost:3000`:

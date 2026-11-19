@@ -35,6 +35,7 @@ export function VistaMes({
     Math.round(Number(x.monto) * 100);
   let gastos = 0;
   let ingresos = 0;
+  let ahorrado = 0; // dinero pasado a la cuenta de ahorro: no es gasto
   const porCategoria = new Map<
     string,
     { nombre: string; icono: string; total: number }
@@ -42,6 +43,10 @@ export function VistaMes({
   for (const x of lista) {
     if (x.tipo === "ingreso") {
       ingresos += centavos(x);
+      continue;
+    }
+    if (x.categorias?.es_ahorro) {
+      ahorrado += centavos(x);
       continue;
     }
     gastos += centavos(x);
@@ -56,6 +61,7 @@ export function VistaMes({
   }
   const desglose = [...porCategoria.values()].sort((a, b) => b.total - a.total);
   const mayor = desglose[0]?.total ?? 0;
+  // El ahorro no se resta: sigue siendo dinero mío, solo cambió de cuenta.
   const balance = ingresos - gastos;
 
   return (
@@ -87,6 +93,14 @@ export function VistaMes({
             {formatoMXN(gastos / 100)}
           </p>
         </div>
+        {ahorrado > 0 && (
+          <div className="flex items-baseline justify-between rounded-2xl border border-neutral-200 px-4 py-3 dark:border-neutral-800">
+            <p className="text-sm text-neutral-500">Ahorrado</p>
+            <p className="text-lg font-semibold tabular-nums text-emerald-600">
+              {formatoMXN(ahorrado / 100)}
+            </p>
+          </div>
+        )}
         <div className="grid grid-cols-2 gap-3">
           <div className="rounded-2xl border border-neutral-200 p-4 dark:border-neutral-800">
             <p className="text-sm text-neutral-500">Ingresos</p>

@@ -4,7 +4,7 @@ import { Navegacion } from "@/components/Navegacion";
 import type { Historial } from "@/lib/importar/categorizar";
 import { claveComercio } from "@/lib/importar/texto";
 import { createClient } from "@/lib/supabase/server";
-import type { Categoria } from "@/lib/tipos";
+import { COLUMNAS_CATEGORIA, type Categoria } from "@/lib/tipos";
 
 export default function PaginaImportar() {
   return (
@@ -31,7 +31,7 @@ async function Contenido() {
   const [{ data: categorias }, { data: previos }] = await Promise.all([
     supabase
       .from("categorias")
-      .select("id, nombre, tipo, icono, orden, archivada")
+      .select(COLUMNAS_CATEGORIA)
       .order("orden")
       .overrideTypes<Categoria[]>(),
     // Lo ya importado sirve de memoria: qué categoría tiene hoy cada comercio.

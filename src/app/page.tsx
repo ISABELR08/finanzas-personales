@@ -3,10 +3,13 @@ import { Suspense } from "react";
 import { CapturaRapida } from "@/components/CapturaRapida";
 import { Navegacion } from "@/components/Navegacion";
 import { IconoCategoria } from "@/components/IconoCategoria";
+import type { ResumenAhorro } from "@/lib/ahorro/calculo";
+import { obtenerEstadoAhorro } from "@/lib/ahorro/servidor";
 import { CATEGORIAS_INICIALES } from "@/lib/categorias-iniciales";
 import { fechaCorta, formatoMXN } from "@/lib/formato";
 import { createClient } from "@/lib/supabase/server";
 import {
+  COLUMNAS_CATEGORIA,
   COLUMNAS_MOVIMIENTO,
   type Categoria,
   type MovimientoConCategoria,
@@ -45,7 +48,10 @@ export default function Home() {
 
 async function Contenido() {
   const supabase = await createClient();
-  const categorias = await obtenerCategorias(supabase);
+  const [categorias, ahorro] = await Promise.all([
+    obtenerCategorias(supabase),
+    obtenerEstadoAhorro(supabase),
+  ]);
 
   const { data: recientes } = await supabase
     .from("movimientos")
@@ -57,7 +63,11 @@ async function Contenido() {
 
   return (
     <>
-      <CapturaRapida categorias={categorias} />
+      {ahorro && <FranjaAhorro resumen={ahorro.resumen} />}
+      <CapturaRapida
+        categorias={categorias}
+        porcentajeAhorro={ahorro?.resumen.porcentaje}
+      />
 
       <section className="flex flex-col gap-2">
         <div className="flex items-baseline justify-between">
@@ -108,6 +118,42 @@ async function Contenido() {
   );
 }
 
+/** Resumen de una línea: cuánto se puede gastar y cuánto falta apartar. */
+function FranjaAhorro({ resumen }: { resumen: ResumenAhorro }) {
+  const { disponible, porDia, faltaApartar } = resumen;
+  if (disponible === null && faltaApartar === 0) return null; // aún sin configurar
+
+  return (
+    <Link
+      href="/ahorro"
+      className="flex items-center justify-between gap-3 rounded-2xl bg-neutral-100 px-4 py-3 text-sm dark:bg-neutral-900"
+    >
+      {disponible !== null && porDia !== null ? (
+        <span>
+          Puedes gastar{" "}
+          <strong
+            className={`tabular-nums ${disponible < 0 ? "text-rose-600" : ""}`}
+          >
+            {disponible < 0 ? "−" : ""}
+            {formatoMXN(Math.abs(disponible))}
+          </strong>
+          <span className="text-neutral-500">
+            {" "}
+            · {formatoMXN(porDia)} por día
+          </span>
+        </span>
+      ) : (
+        <span className="text-neutral-500">Anota cuánto dinero tienes</span>
+      )}
+      {faltaApartar > 0 && (
+        <span className="shrink-0 font-medium text-emerald-600">
+          Aparta {formatoMXN(faltaApartar)}
+        </span>
+      )}
+    </Link>
+  );
+}
+
 type Supabase = Awaited<ReturnType<typeof createClient>>;
 
 /** Lee las categorías activas; si la cuenta es nueva, crea las iniciales. */
@@ -115,7 +161,7 @@ async function obtenerCategorias(supabase: Supabase): Promise<Categoria[]> {
   const leer = () =>
     supabase
       .from("categorias")
-      .select("id, nombre, tipo, icono, orden, archivada")
+      .select(COLUMNAS_CATEGORIA)
       .eq("archivada", false)
       .order("orden")
       .overrideTypes<Categoria[]>();
@@ -127,7 +173,11 @@ async function obtenerCategorias(supabase: Supabase): Promise<Categoria[]> {
   if (count === 0) {
     // ignoreDuplicates: si dos pestañas llegan a la vez, no se duplican.
     await supabase.from("categorias").upsert(
-      CATEGORIAS_INICIALES.map((c, i) => ({ ...c, orden: i })),
+      CATEGORIAS_INICIALES.map((c, i) => ({
+        ...c,
+        es_ahorro: c.es_ahorro ?? false,
+        orden: i,
+      })),
       { onConflict: "user_id,tipo,nombre", ignoreDuplicates: true },
     );
   }
